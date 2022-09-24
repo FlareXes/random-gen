@@ -4,29 +4,49 @@ Secure text generator using Python. This script follows uppercase, lowercase, sp
 # Usage
 ### Without Downloading Script
 ```bash
-curl -s https://raw.githubusercontent.com/FlareXes/randx/master/_randx.py | python -
+curl -s https://raw.githubusercontent.com/FlareXes/randx/master/randx.py | python -
 ```
 With Specific Length Like Here Is 32
 ```bash
-curl -s https://raw.githubusercontent.com/FlareXes/randx/master/_randx.py | python - 32
+curl -s https://raw.githubusercontent.com/FlareXes/randx/master/randx.py | python - 32
 ```
 Also Remove Ambiguous Chars
 ```bash
-curl -s https://raw.githubusercontent.com/FlareXes/randx/master/_randx.py | python - 11 --safe
+curl -s https://raw.githubusercontent.com/FlareXes/randx/master/randx.py | python - 11 --safe
 ```
 
 ### Usual Method After Downloading
 ```bash
-python _randx.py
+python randx.py
 ```
 With Specific Length Like Here Is 32
 ```bash
-python _randx.py 32
+python randx.py 32
 ```
 Also Remove Ambiguous Chars
 ```bash
-python _randx.py 11 --safe
+python randx.py 11 --safe
 ```
+
+### Randx Executable
+If you don't like using `python` everytime. Then, much better option is to use complied binaries available in `bin` directory.
+```
+randx_unix: For Linux and Macos
+randx_win: For Windows
+```
+
+Now, we can use it from anywhere in terminal
+```bash
+randx_unix 16 --safe
+```
+
+You can even create yourself if you want to. Follow the below steps.
+```bash
+pip install pyinstaller
+git clone https://github.com/flarexes/randx
+cd randx && pyinstaller --onefile randx.py
+```
+Read this for more info [.py to .exe](https://towardsdatascience.com/how-to-easily-convert-a-python-script-to-an-executable-file-exe-4966e253c7e9)
 
 # License
 
