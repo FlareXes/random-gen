@@ -31,11 +31,12 @@ python randx.py 11 --safe
 ### Randx Executable
 If you don't like using `python` everytime. Then, much better option is to use complied binaries available in `bin` directory.
 ```
-randx_unix: For Linux and Macos
+randx_unix: For Linux
 randx_win: For Windows
+randx_macos: For Macos
 ```
 
-Now, we can use it from anywhere in terminal
+Just download the executable and place into `/usr/local/bin/` directory. Now, we can use it from anywhere in terminal.
 ```bash
 randx_unix 16 --safe
 ```
