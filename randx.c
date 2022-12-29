@@ -1,27 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-char *PASSWORD;
+void generatePassword(char *password, int length) {
+    uint randomIdx;
+    int charactersLength = 94;
+    const char *characters;
+    characters = "1234567890`-=~!@#$%^&*()_+[]{}\\|;'/.,<>?:\"qwertyuioplkjhgfdsazxcvbnmPOIUYTREWQASDFGHJKLMNBVCXZ";
 
-char *generatePassword(int length) {
-    PASSWORD = (char *)malloc(length * sizeof(char));
-    
     for (int i = 0; i < length; i++) {
-        PASSWORD[i] = 33 + arc4random() % 94;
+        randomIdx = arc4random() % charactersLength;
+        password[i] = characters[randomIdx];
     }
-    
-    PASSWORD[length] = '\0';
-    return PASSWORD;
+    password[length] = '\0';
 }
 
 int main(int argc, char const *argv[]) {
     if (argc < 2) {
-        puts(generatePassword(16));
+        char password[16];
+        generatePassword(password, 16);
+        printf("%s", password);
+        return 0;
+    }
+
+    if (strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
+        printf("Usage: %s password_length\n", argv[0]);
+        printf("Generates a secure password of the specified length.\n");
         return 0;
     }
 
     int length = atoi(argv[1]);
-    puts(generatePassword(length));
-    free(PASSWORD);
-    return 0;
+    char password[length];
+    generatePassword(password, length);
+    printf("%s", password);
 }
