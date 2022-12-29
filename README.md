@@ -47,6 +47,15 @@ pip install pyinstaller
 git clone https://github.com/flarexes/randx
 cd randx && pyinstaller --onefile randx.py
 ```
+
+or
+
+```bash
+git clone https://github.com/flarexes/randx
+gcc randx.c -o randx
+cp ./randx /usr/local/bin/
+```
+
 Read this for more info [.py to .exe](https://towardsdatascience.com/how-to-easily-convert-a-python-script-to-an-executable-file-exe-4966e253c7e9)
 
 # License
